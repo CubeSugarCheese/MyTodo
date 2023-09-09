@@ -1,0 +1,7 @@
+{
+  "name": "MyTodo",
+  "displayName": "MyTodo",
+  "packagerOpts": {
+    "config": "metro.config.js"
+  }
+}
