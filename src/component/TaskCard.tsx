@@ -20,10 +20,14 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderRadius: 10,
     backgroundColor: '#FFFFFF',
+    gap: 5,
+  },
+  row: {
+    flexDirection: 'row',
+    gap: 5,
   },
   checkBoxStyle: {width: 10, flex: 1, alignSelf: 'center'},
   taskNameStyle: {flex: 10, fontSize: 20, alignSelf: 'center'},
-  taskDetailStyle: {},
 });
 
 export default function TaskCard({
@@ -59,13 +63,13 @@ export default function TaskCard({
         taskID,
         finish: isFinished,
       }),
-    );
+    ); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isFinished]);
 
   return (
     <TouchableOpacity onLongPress={confirmAlert}>
       <View style={styles.cardStyle}>
-        <View style={{flexDirection: 'row'}}>
+        <View style={styles.row}>
           <BouncyCheckbox
             style={styles.checkBoxStyle}
             fillColor="#1eaeff"
@@ -82,9 +86,7 @@ export default function TaskCard({
           </Text>
           <EditButton callback={editCallback} />
         </View>
-        {detail !== '' ? (
-          <Text style={styles.taskDetailStyle}>{detail}</Text>
-        ) : null}
+        {detail !== '' ? <Text>{detail}</Text> : null}
       </View>
     </TouchableOpacity>
   );

@@ -24,7 +24,7 @@ export default function MainScreen({
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: headerRightButton,
-    });
+    }); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [navigation]);
   function renderTask({item}: {item: TaskWithID}): React.JSX.Element {
     return (
@@ -54,7 +54,6 @@ export default function MainScreen({
   return (
     <SafeAreaView style={backgroundStyle}>
       <WingBlank size="lg">
-        <WhiteSpace />
         <FlatList
           data={tasks}
           renderItem={renderTask}

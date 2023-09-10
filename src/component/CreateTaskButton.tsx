@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     alignSelf: 'center',
-    fontSize: 25,
+    fontSize: 30,
   },
 });
 
